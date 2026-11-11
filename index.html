@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AlsoSocial | We Build. We Grow. We Automate.</title>
+<meta name="description" content="AlsoSocial helps ambitious businesses grow through social media campaigns, lead generation, creative execution, branding, and AI-powered automation.">
+<meta property="og:title" content="AlsoSocial">
+<meta property="og:description" content="We Build. We Grow. We Automate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#141432;
+  --paper:#f6f6ff;
+  --blue:#4a5cff;
+  --lilac:#cfc3ff;
+  --peach:#ffd8c4;
+  --mint:#c8f1e4;
+  --muted:#5b5b7a;
+  --r:28px;
+  --head:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"DM Sans",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font:400 1.0625rem/1.6 var(--body);color:var(--ink);background:var(--paper)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+h1,h2,h3{font-family:var(--head);line-height:1.05;letter-spacing:-.02em}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:14px clamp(20px,5vw,64px);background:rgba(246,246,255,.9);backdrop-filter:blur(8px)}
+.logo{font:800 1.4rem var(--head);text-decoration:none}
+nav{display:flex;gap:28px}
+nav a{text-decoration:none;font-weight:500}
+nav a:hover{color:var(--blue)}
+.menu-btn{display:none;font:500 1rem var(--body);background:none;border:1px solid var(--ink);border-radius:99px;padding:6px 16px;cursor:pointer}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:clamp(56px,10vw,140px) clamp(20px,5vw,64px) clamp(64px,9vw,120px)}
+.hero h1{position:relative;font-size:clamp(3.2rem,11vw,9rem);font-weight:800;max-width:11ch}
+.lead{position:relative;max-width:52ch;margin:32px 0;font-size:1.25rem;color:var(--muted)}
+.actions{position:relative;display:flex;gap:12px;flex-wrap:wrap}
+.blob{position:absolute;right:-8%;top:8%;width:min(55vw,640px);aspect-ratio:1;border-radius:46% 54% 60% 40%/50% 40% 60% 50%;background:linear-gradient(135deg,var(--lilac),var(--peach) 55%,var(--mint));animation:drift 14s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(-4%,6%) rotate(24deg) scale(1.06);border-radius:58% 42% 40% 60%/42% 58% 42% 58%}}
+
+.btn{display:inline-block;padding:14px 28px;border:0;border-radius:99px;background:var(--ink);color:#fff;font:500 1rem var(--body);text-decoration:none;cursor:pointer;transition:background .2s}
+.btn:hover{background:var(--blue)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+
+/* sections */
+.section{padding:clamp(56px,8vw,110px) clamp(20px,5vw,64px)}
+.section>h2{font-size:clamp(2rem,5vw,3.8rem);max-width:20ch;margin-bottom:40px}
+.sub{margin:-24px 0 32px;color:var(--muted)}
+
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.panel{padding:36px;border-radius:var(--r);min-height:340px;display:flex;flex-direction:column;gap:14px}
+.panel h3{font-size:2.6rem}
+.panel ul{margin-top:auto;padding-left:0;list-style:none;display:grid;gap:4px;font-weight:500}
+.panel li::before{content:"+ ";color:var(--blue)}
+.p-build{background:var(--lilac)}
+.p-grow{background:var(--peach)}
+.p-auto{background:var(--mint)}
+
+.chips{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:12px}
+.chips li{padding:14px 26px;border-radius:99px;box-shadow:inset 0 0 0 1.5px var(--ink);font:700 1.15rem var(--head)}
+
+.systems{background:var(--ink);color:#fff;border-radius:var(--r);margin:0 clamp(12px,2vw,28px)}
+.steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.steps span{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--lilac);color:var(--ink);font:800 1.1rem var(--head);margin-bottom:16px}
+.steps h3{font-size:1.9rem;margin-bottom:8px}
+.steps p{color:#c9c9e6}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.stat{padding:40px 32px;border-radius:var(--r);display:flex;flex-direction:column;gap:6px}
+.stat strong{font:800 clamp(4rem,9vw,7rem)/1 var(--head);letter-spacing:-.04em}
+.s1{background:var(--peach)}.s2{background:var(--lilac)}.s3{background:var(--mint)}
+
+.about{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.about h2{margin:0}
+.about-copy{display:grid;gap:18px;justify-items:start;color:var(--muted)}
+
+.quotes{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px}
+blockquote{flex:0 0 min(86vw,380px);scroll-snap-align:start;padding:32px;border-radius:var(--r);background:#fff;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+blockquote cite{font:700 .95rem var(--head);font-style:normal;color:var(--blue)}
+
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.contact h2{margin-bottom:20px}
+.contact p{color:var(--muted)}
+.meta{margin-top:24px;color:var(--ink)!important;font-weight:500}
+form{display:grid;gap:16px;padding:32px;border-radius:var(--r);background:#fff}
+label{display:grid;gap:6px;font-weight:500;font-size:.95rem}
+input,textarea{font:inherit;padding:12px 14px;border:1.5px solid #d7d7ee;border-radius:14px;background:var(--paper)}
+input:focus,textarea:focus{outline:none;border-color:var(--blue)}
+#form-status{min-height:1.4em;font-weight:500;color:var(--blue)!important}
+
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:32px clamp(20px,5vw,64px);color:var(--muted);font-size:.95rem}
+.social{display:flex;gap:20px;flex-wrap:wrap}
+
+/* terms page */
+.doc{max-width:70ch;padding:clamp(40px,7vw,96px) clamp(20px,5vw,64px)}
+.doc h1{font-size:clamp(2.4rem,6vw,4rem);margin-bottom:32px}
+.doc h2{font-size:1.5rem;margin:32px 0 8px}
+
+@media (max-width:860px){
+  .menu-btn{display:block}
+  nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--paper);padding:8px clamp(20px,5vw,64px) 20px}
+  nav.open{display:flex}
+  nav a{padding:12px 0;border-bottom:1px solid #e1e1f2}
+  .trio,.steps,.stats,.about,.contact{grid-template-columns:1fr}
+  .panel{min-height:0}
+  .blob{opacity:.55;top:2%}
+}
+@media (prefers-reduced-motion:reduce){.blob{animation:none}html{scroll-behavior:auto}}
+
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="#top">AlsoSocial</a>
+  <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+  <nav id="menu">
+    <a href="#services">Services</a>
+    <a href="#numbers">Results</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+    <a href="terms.html">Terms &amp; Conditions</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="blob" aria-hidden="true"></div>
+    <h1>We Build.<br>We Grow.<br>We Automate.</h1>
+    <p class="lead">AlsoSocial helps ambitious businesses grow through social media campaigns, lead generation, creative execution, branding, and AI-powered automation.</p>
+    <div class="actions">
+      <a class="btn" href="#services">Explore our services</a>
+      <a class="btn ghost" href="mailto:varun@wealsosocial.com">Email us</a>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <h2>What we do</h2>
+    <div class="trio">
+      <article class="panel p-build">
+        <h3>Build.</h3>
+        <p>We build websites that turn visitors into customers.</p>
+        <ul><li>Website design</li><li>Landing pages</li><li>Booking forms</li><li>Conversion optimization</li><li>AI automations</li></ul>
+      </article>
+      <article class="panel p-grow">
+        <h3>Grow.</h3>
+        <p>We create campaigns that reach the right people and create more opportunities.</p>
+        <ul><li>Google Ads</li><li>Meta Ads</li><li>Lead generation</li><li>Campaign optimization</li></ul>
+      </article>
+      <article class="panel p-auto">
+        <h3>Automate.</h3>
+        <p>We create automations that work smarter with AI-powered systems.</p>
+        <ul><li>AI chatbots</li><li>AI voice assistants</li><li>Workflow automation</li><li>Email &amp; SMS follow-ups</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Industries we work with</h2>
+    <ul class="chips">
+      <li>Hospitality &amp; B&amp;Bs</li><li>Healthcare &amp; Dental</li><li>Local &amp; Home Services</li><li>E-commerce &amp; Retail</li><li>And beyond</li>
+    </ul>
+  </section>
+
+  <section class="section systems">
+    <h2>Your business doesn't need more noise. It needs better systems.</h2>
+    <ol class="steps">
+      <li><span>1</span><h3>Attention</h3><p>Build an online presence that gets noticed.</p></li>
+      <li><span>2</span><h3>Conversion</h3><p>Turn attention into qualified leads.</p></li>
+      <li><span>3</span><h3>Automation</h3><p>Build systems that save time and scale operations.</p></li>
+    </ol>
+  </section>
+
+  <section id="numbers" class="section">
+    <h2>Our journey in numbers</h2>
+    <div class="stats">
+      <div class="stat s1"><strong data-to="5" data-suffix="">5</strong><span>Years of experience</span></div>
+      <div class="stat s2"><strong data-to="2" data-suffix="K">2K</strong><span>Trusted clients</span></div>
+      <div class="stat s3"><strong data-to="3" data-suffix="M">3M</strong><span>Reports generated</span></div>
+    </div>
+  </section>
+
+  <section class="section about">
+    <h2>We don't just create. We build systems.</h2>
+    <div class="about-copy">
+      <p>AlsoSocial is a digital growth agency focused on helping businesses build stronger online presences, generate more opportunities, and automate the work that slows them down.</p>
+      <p>We combine creative thinking, digital marketing, technology, and automation to create practical systems that businesses can actually use.</p>
+      <a class="btn" href="#contact">Let's talk</a>
+    </div>
+  </section>
+
+  <section id="testimonials" class="section">
+    <h2>Testimonials</h2>
+    <p class="sub">Straight from the feed</p>
+    <div class="quotes">
+      <blockquote><p>The website brings people in, the ads get us noticed, and the AI handles the repetitive conversations. We can finally focus on running the business instead of constantly managing our marketing.</p><cite>Local Business Owner, CA</cite></blockquote>
+      <blockquote><p>AlsoSocial reworked our campaigns and helped us focus on the audiences that actually matter. Our advertising feels much more purposeful now.</p><cite>Business Owner, MN</cite></blockquote>
+      <blockquote><p>AlsoSocial rebuilt our website and improved our booking experience. Guests can now find what they need quickly, and we've seen a noticeable increase in direct bookings.</p><cite>James Sahlew, MN</cite></blockquote>
+      <blockquote><p>The AI chatbot now answers common questions, captures enquiries, and helps our customers 24/7. It has taken a lot of repetitive work off our team.</p><cite>Business Owner, FL</cite></blockquote>
+      <blockquote><p>The new website and lead-generation setup made it much easier for patients to contact us. We started receiving more relevant enquiries without increasing our workload.</p><cite>Dental Practice Owner, CA</cite></blockquote>
+      <blockquote><p>For years, we knew our business had something special, but we struggled to get the right people to notice us. AlsoSocial helped us tell our story and put our business in front of people who actually cared.</p><cite>Boutique Business Owner, FL</cite></blockquote>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <div>
+      <h2>Your next stage starts here.</h2>
+      <p>Tell us where your business is today, where you want it to go, and what's getting in the way. We'll figure out the digital pieces to get you there.</p>
+      <p class="meta">Email: <a href="mailto:varun@wealsosocial.com">varun@wealsosocial.com</a><br>Bangalore, Karnataka, India</p>
+    </div>
+    <form id="lead-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact">
+      <p hidden><label>Don't fill this out <input name="bot-field"></label></p>
+      <label>Name *<input name="name" required autocomplete="name"></label>
+      <label>Email *<input type="email" name="email" required autocomplete="email"></label>
+      <label>Website<input type="url" name="website" placeholder="https://"></label>
+      <label>Phone *<input type="tel" name="phone" required autocomplete="tel"></label>
+      <label>Message<textarea name="message" rows="4"></textarea></label>
+      <button class="btn" type="submit">Let's talk</button>
+      <p id="form-status" role="status"></p>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2026 AlsoSocial. Built to be found.</p>
+  <p class="social">
+    <a href="https://www.instagram.com/alsosocial/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://www.linkedin.com/company/alsosocial" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="terms.html">Terms &amp; Conditions</a>
+  </p>
+</footer>
+
+<script>
+// Mobile menu
+const btn = document.querySelector('.menu-btn');
+const menu = document.getElementById('menu');
+btn.addEventListener('click', () => {
+  const open = menu.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open);
+});
+menu.addEventListener('click', e => {
+  if (e.target.tagName === 'A') {
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded', false);
+  }
+});
+
+// Contact form
+// Netlify: leave FORM_ENDPOINT empty (Netlify Forms handles it).
+// Vercel: create a free form at formspree.io and paste its URL here,
+// e.g. "https://formspree.io/f/xxxxxxxx"
+const FORM_ENDPOINT = '';
+
+const form = document.getElementById('lead-form');
+const status = document.getElementById('form-status');
+
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  status.textContent = 'Sending...';
+  const data = new FormData(form);
+  try {
+    const res = FORM_ENDPOINT
+      ? await fetch(FORM_ENDPOINT, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
+      : await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(data).toString()
+        });
+    if (!res.ok) throw new Error('Request failed');
+    form.reset();
+    status.textContent = "Thanks, we'll be in touch soon.";
+  } catch (err) {
+    status.textContent = 'Could not send. Email us at varun@wealsosocial.com instead.';
+  }
+});
+
+</script>
+</body>
+</html>
